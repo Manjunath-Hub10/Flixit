@@ -4,12 +4,19 @@ import styled from 'styled-components';
 
 const BackgroundImage = () => {
   return (
-    <div>
-      <img src={background} alt="background" />
-    </div>
+    <Container>
+         <img src={background} alt="background" />
+    </Container>
   )
 }
 
 export default BackgroundImage
 
-const Container = styled.div``;
+const Container = styled.div`
+    height: 100vh;
+    width: 100vw;
+    img {
+        height: 100vh;
+        width: 100vw;
+    }
+`;

@@ -4,8 +4,8 @@ import {
     createSlice,
   } from "@reduxjs/toolkit";
 
-//   import { API_KEY, TMDB_BASE_URL } from "../utils/constants";
-//   import axios from "axios";
+  import { API_KEY, TMDB_BASE_URL } from "../utils/constants";
+  import axios from "axios";
 
   const initialState = {
     movies: [],
@@ -17,7 +17,7 @@ import {
     {
         name: "Flixit",
         initialState,
-        extraReducers: (builder) = {},
+        extraReducers: (builder) => {},
     });
 
     export const store = configureStore({

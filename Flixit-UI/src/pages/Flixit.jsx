@@ -6,9 +6,8 @@ import { FaPlay } from 'react-icons/fa';
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import styled  from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from "react-redux";
-import { getGenres } from '../store';
-// import { fetchMovies, getGenres } from '../store';
+import { useDispatch, useSelector } from "react-redux";
+import { fetchMovies, getGenres } from '../store';
 // import Slider from '../components/Slider';
 
 
@@ -17,17 +16,25 @@ const Flixit = () => {
 
   const navigate = useNavigate();
 
+  const genresLoaded = useSelector((state) => state.flixit.genresLoaded);
+
+  const  movies = useSelector((state)=> state.flixit.movies)
+
   const dispatch = useDispatch();
 
   useEffect(()=> {
     dispatch(getGenres())
   }, [])
 
+  useEffect(() => {
+    if (genresLoaded) dispatch(fetchMovies({type: "all"}));
+    });
+
   window.onscroll = () => {
    setIsScrolled(window.pageYOffset === 0 ? false : true);
     return () => (window.onscroll = null);
   };
-
+//   console.log(movies);
   return (
     <Container>
       <Navbar isScrolled={isScrolled}/>

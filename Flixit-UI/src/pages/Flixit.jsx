@@ -8,7 +8,7 @@ import styled  from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { fetchMovies, getGenres } from '../store';
-// import Slider from '../components/Slider';
+import Slider from '../components/Slider';
 
 
 const Flixit = () => {
@@ -28,13 +28,14 @@ const Flixit = () => {
 
   useEffect(() => {
     if (genresLoaded) dispatch(fetchMovies({type: "all"}));
-    });
+    }, [genresLoaded]);
 
   window.onscroll = () => {
    setIsScrolled(window.pageYOffset === 0 ? false : true);
     return () => (window.onscroll = null);
   };
-//   console.log(movies);
+  
+  // console.log(movies);
   return (
     <Container>
       <Navbar isScrolled={isScrolled}/>
@@ -55,7 +56,7 @@ const Flixit = () => {
           </div>     
       </div>
 
-      {/* <Slider movies={movies} /> */}
+      <Slider movies={movies} />
     </Container>
   )
 }

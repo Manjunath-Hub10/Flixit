@@ -1,11 +1,11 @@
-// import React from 'react'
+import React from 'react'
 
-// const Card = () => {
-//   return (
-//     <div>
-//       <h1>CARD</h1>
-//     </div>
-//   )
-// }
+const Card = () => {
+  return (
+    <div>
+      <h1>CARD</h1>
+    </div>
+  )
+}
 
-// export default Card
+export default Card

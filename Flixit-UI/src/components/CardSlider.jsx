@@ -51,6 +51,7 @@ const CardSlider = React.memo(({data, title}) => {
 export default CardSlider
 
 const Container = styled.div`
+cursor: pointer;
 gap: 1rem;
 position: relative;
 padding: 2rem 0;

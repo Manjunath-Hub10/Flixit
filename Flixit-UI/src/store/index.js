@@ -19,7 +19,7 @@ import {
     const {
       data: { genres },
     } = await axios.get(`${TMDB_BASE_URL}/genre/movie/list?api_key=${API_KEY}`);
-    //   console.log(data);
+      // console.log(data);
     return genres;
   });
 
@@ -106,11 +106,11 @@ import {
         flixit: { genres },
 
       } = thunkApi.getState();
-      return getRowData(
+      console.log(genres);
+      return getRawData(
         `${TMDB_BASE_URL}/discover/${type}?api_key=${API_KEY}&with_genres=${genre}`,
         genres
       );
-      // console.log(data); //TESTED
     }
   );
 

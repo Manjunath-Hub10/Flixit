@@ -32,7 +32,7 @@ const Container = styled.div`
             z-index: 1;
             svg {
                 font-size: 3rem;
-                curser: pointer;
+                cursor: pointer;
             }
         }
         video {

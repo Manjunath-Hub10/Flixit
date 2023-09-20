@@ -43,25 +43,6 @@ import {
   };
 
 
-      // const createArrayFromRawData = (array, movieArray, genres) => {
-      //   // console.log(array); //TESTED
-      //   array.forEach((movie) => {
-      //       const movieGenres = [];
-      //       movie.genre_ids.forEach((genre) => {
-      //           const name = genres.find(({ id }) => id === genre);
-      //           if (name) movieGenres.push(name.name);
-      //       });
-      //       if (movie.backdrop_path){
-      //           moviesArray.push({
-      //               id: movie.id,
-      //               name: movie?.oiginal_name ? movie.oiginal_name : movie.original_title,
-      //               image: movie.backdrop_path,
-      //               genres: movieGenres.slice(0, 3),
-      //           });
-      //       }
-      //   });
-      // };
-
 
       const getRawData = async (api, genres, paging) => {
         const moviesArray = [];
@@ -120,7 +101,7 @@ import {
       const {
         data: { movies },
       } = await axios.get(
-        `http://localhost:5000/api/user/liked/${email}`
+        `https://flixit-api-nrca.onrender.com/api/user/liked/${email}`
       );
       return movies;
     }
@@ -132,7 +113,7 @@ import {
       const {
         data: { movies },
       } = await axios.put(
-        `http://localhost:5000/api/user/delete`,
+        `https://flixit-api-nrca.onrender.com/api/user/delete`,
         {
           email,
           movieId,
